@@ -1,7 +1,7 @@
-package main 
+package main
 
 import (
-  "fmt"
+	"fmt"
 	"net/http"
 	"os"
 )
@@ -11,14 +11,14 @@ func getPort() string {
 	if p != "" {
 		return ":" + p
 	}
-	return ":8080"
+	return ":80"
 }
 
 func main() {
-  http.HandleFunc("/", test)
+	http.HandleFunc("/", test)
 	http.ListenAndServe(getPort(), nil)
 }
 
-func test(w http.ResponseWriter, r *http.Request){
-  fmt.Fprintf(w, "this is a test")
+func test(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "this is a test")
 }
